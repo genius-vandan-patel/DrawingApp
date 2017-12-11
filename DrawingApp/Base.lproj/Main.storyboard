@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cLe-tF-tCq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,7 +56,133 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-33" y="133"/>
+        </scene>
+        <!--Image ViewVC-->
+        <scene sceneID="I1h-8T-iqx">
+            <objects>
+                <viewController id="cLe-tF-tCq" customClass="ImageViewVC" customModule="DrawingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8kH-gJ-mTL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFA-M0-CXe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORs-6S-pCQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILh-6Q-oL8">
+                                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WIp-Tn-AMl" customClass="CanvasImageView" customModule="DrawingApp" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="8" width="359" height="532"/>
+                                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="WIp-Tn-AMl" firstAttribute="centerY" secondItem="ILh-6Q-oL8" secondAttribute="centerY" id="4SX-1p-znt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WIp-Tn-AMl" secondAttribute="trailing" constant="8" id="C7c-c7-5kR"/>
+                                                    <constraint firstItem="WIp-Tn-AMl" firstAttribute="centerX" secondItem="ILh-6Q-oL8" secondAttribute="centerX" id="MqG-tX-kYr"/>
+                                                    <constraint firstItem="WIp-Tn-AMl" firstAttribute="top" secondItem="ILh-6Q-oL8" secondAttribute="top" constant="8" id="Taj-BW-Feb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WIp-Tn-AMl" secondAttribute="bottom" constant="8" id="Y4a-Lh-f8h"/>
+                                                    <constraint firstItem="WIp-Tn-AMl" firstAttribute="leading" secondItem="ILh-6Q-oL8" secondAttribute="leading" constant="8" id="Yn5-x4-UF9"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P7i-zv-nyL">
+                                                <rect key="frame" x="16" y="60" width="343" height="34"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oba-MJ-tN4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="34"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                                        <state key="normal" title="Clear">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapClear:" destination="cLe-tF-tCq" eventType="touchUpInside" id="9QU-Td-pIS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXc-vK-88z">
+                                                        <rect key="frame" x="117.5" y="0.0" width="108" height="34"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                                        <state key="normal" title="Draw">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapDraw:" destination="cLe-tF-tCq" eventType="touchUpInside" id="TKh-vB-Nqx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tH8-Cr-KSm">
+                                                        <rect key="frame" x="235.5" y="0.0" width="107.5" height="34"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                                        <state key="normal" title="Done">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapDone:" destination="cLe-tF-tCq" eventType="touchUpInside" id="kZF-9f-UTo"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="AhK-lk-Lyu" firstAttribute="trailing" secondItem="P7i-zv-nyL" secondAttribute="trailing" constant="16" id="0M4-E1-ix8"/>
+                                            <constraint firstItem="ILh-6Q-oL8" firstAttribute="bottom" secondItem="AhK-lk-Lyu" secondAttribute="bottom" id="JfN-P4-hti"/>
+                                            <constraint firstItem="P7i-zv-nyL" firstAttribute="top" secondItem="AhK-lk-Lyu" secondAttribute="top" constant="40" id="NNk-fg-kVP"/>
+                                            <constraint firstItem="ILh-6Q-oL8" firstAttribute="leading" secondItem="AhK-lk-Lyu" secondAttribute="leading" id="QNx-Xa-TwP"/>
+                                            <constraint firstItem="P7i-zv-nyL" firstAttribute="leading" secondItem="AhK-lk-Lyu" secondAttribute="leading" constant="16" id="QR1-TX-76t"/>
+                                            <constraint firstItem="ILh-6Q-oL8" firstAttribute="top" secondItem="P7i-zv-nyL" secondAttribute="bottom" constant="25" id="dm5-z6-QeZ"/>
+                                            <constraint firstItem="ILh-6Q-oL8" firstAttribute="trailing" secondItem="AhK-lk-Lyu" secondAttribute="trailing" id="sgo-mQ-bTk"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="AhK-lk-Lyu"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ORs-6S-pCQ" firstAttribute="leading" secondItem="vFA-M0-CXe" secondAttribute="leading" id="7ef-M0-cmd"/>
+                                    <constraint firstAttribute="bottom" secondItem="ORs-6S-pCQ" secondAttribute="bottom" id="IfE-4T-jD3"/>
+                                    <constraint firstItem="ORs-6S-pCQ" firstAttribute="centerY" secondItem="vFA-M0-CXe" secondAttribute="centerY" id="SP2-vd-4oN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ORs-6S-pCQ" secondAttribute="trailing" id="YHt-fm-d0i"/>
+                                    <constraint firstItem="ORs-6S-pCQ" firstAttribute="centerX" secondItem="vFA-M0-CXe" secondAttribute="centerX" id="lya-d5-hZD"/>
+                                    <constraint firstItem="ORs-6S-pCQ" firstAttribute="top" secondItem="vFA-M0-CXe" secondAttribute="top" id="yLc-TM-pRg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vFA-M0-CXe" firstAttribute="top" secondItem="8kH-gJ-mTL" secondAttribute="top" id="R62-Rk-crH"/>
+                            <constraint firstItem="vFA-M0-CXe" firstAttribute="bottom" secondItem="plC-L3-jbQ" secondAttribute="bottom" id="i6I-xa-WQx"/>
+                            <constraint firstItem="vFA-M0-CXe" firstAttribute="leading" secondItem="8kH-gJ-mTL" secondAttribute="leading" id="oE6-Lc-emd"/>
+                            <constraint firstAttribute="trailing" secondItem="vFA-M0-CXe" secondAttribute="trailing" id="oIs-87-BXi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="plC-L3-jbQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="canvasImageView" destination="WIp-Tn-AMl" id="nW5-AL-Rfm"/>
+                        <outlet property="pdfScrollView" destination="ILh-6Q-oL8" id="u43-3A-Nj4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBV-8g-AFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.60000000000002" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
